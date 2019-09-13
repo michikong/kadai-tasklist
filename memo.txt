@@ -23,3 +23,6 @@ $ git init
 ここまでの内容をコミット
 $ git add .
 $ git commit -m "init Rails Project"
+
+データベースを作成
+$ rails db:create
