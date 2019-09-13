@@ -1,0 +1,25 @@
+課題：タスク管理アプリの作成
+ここまでで、 Model, Router, Controller, View を一通り学び、一区切りできたので、課題に取り組んで全体を復習しておきましょう。
+タスクを管理できるWebアプリケーションを作成して、最後に GitHub に kadai-tasklist というリモートリポジトリを作成してプッシュしてください。
+以下、仕様について述べます。
+* Rails で tasklist アプリを作成してください。
+* タスクは、tasks テーブルを作成し、content カラムで構成されます。
+* タスクの Router には resources を利用してください。
+* resources で生成される全てのアクションを実装してください。
+* View は index (タスク一覧）、show（詳細ページ）、new（作成ページ）、edit（編集ページ）を作成してください。
+* また、トップページはタスクリスト一覧と同じページにルーティングしてください。
+* GitHub に kadai-tasklist でプッシュしてください。
+
+
+Railsプロジェクトの作成
+$ rails _5.2.2_ new tasklist --database=mysql --skip-bundle --skip-test
+
+Gemfile に書かれたライブラリ一覧をインストール
+$ bundle install
+
+バージョン管理を開始
+$ git init
+
+ここまでの内容をコミット
+$ git add .
+$ git commit -m "init Rails Project"
