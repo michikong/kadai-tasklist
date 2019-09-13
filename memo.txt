@@ -26,3 +26,50 @@ $ git commit -m "init Rails Project"
 
 データベースを作成
 $ rails db:create
+
+サーバを起動してデータベースの接続を確認
+$ sudo service mysqld start
+$ rails s
+
+Rails と MySQLの連携設定を確認
+config/database.yml
+
+Task モデルを作成
+Task は content というメッセージ内容（文字列）を持つように
+g は generate の略
+$ rails g model Task content:string
+
+マイグレーションの実行(MySQL を起動してから)
+$ rails db:migrate
+
+
+マイグレーションの確認
+
+MySQL ログイン
+$ mysql -u root
+
+データベースの選択
+mysql> use tasklist_development
+
+テーブル一覧確認（tasksテーブルが作成されているか確認）
+mysql> show tables;
+
+テーブル設計の確認
+mysql> describe tasks;
+
+config/routes.rb 完成
+
+Rails.application.routes.draw do
+  root to: 'tasks#index'
+
+  resources :tasks
+end
+
+
+Router の確認
+$ rails routes
+
+Controller の生成
+Helper と CSS と JavaScript を自動生成しないオプション
+$ rails g controller Tasks --no-helper --no-assets
+
